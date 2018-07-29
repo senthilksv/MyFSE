@@ -4,6 +4,7 @@
         <div class="panel-heading">Update Task</div>
         <div class="panel-body">
     <form class="form-horizontal" #f="ngForm">
+        <p class="alert alert-danger" *ngIf="showError">{{results}}</p>
       <div class="form-group">
         <label class="control-label col-sm-2" for="taskName">Task:</label>
         <div class="col-sm-4">

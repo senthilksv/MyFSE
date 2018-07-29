@@ -1,5 +1,5 @@
 export class TaskDetail 
-{
+{    
     id:number;
     name:string;
     startDate:Date;
@@ -7,5 +7,5 @@ export class TaskDetail
     priority:number;
     parentId:number;  
     parentName:string; 
-    endTask:boolean;
+    endTask:boolean;    
 }

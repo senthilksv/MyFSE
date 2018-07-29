@@ -17,6 +17,7 @@ export class TaskmgrEditComponent implements OnInit {
   taskDetail:TaskDetail;
   updateTaskId:number
   results:string
+  showError:boolean = false;
   constructor(private service:SharedService,private route: ActivatedRoute,
     private router: Router) { 
    this.taskDetail = new TaskDetail();
@@ -31,8 +32,17 @@ export class TaskmgrEditComponent implements OnInit {
       response=>this.taskDetails=response.filter(resElement => resElement.id !=  this.updateTaskId && !resElement.endTask));
 
       this.service.GetTask(this.updateTaskId).subscribe(
-        response => { this.taskDetail =  response; console.log('start Date' + this.taskDetail.startDate);
-        });
+        response => { this.taskDetail =  response;
+        },
+        error =>
+          {
+            if(error.status < 200 || error.status > 300)
+            {    
+              this.showError = true;     
+              this.results = JSON.parse(error._body);          
+            }
+              console.log("error " + error.statusText);
+          });
   }
 
   onUpdateTask()
@@ -50,7 +60,7 @@ export class TaskmgrEditComponent implements OnInit {
         error =>
         {
           if(error.status < 200 || error.status > 300)
-          this.results = error._body;
+          this.results = JSON.parse(error._body);
           this.openModal();
           console.log("error " + error._body);
         }

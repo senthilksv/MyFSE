@@ -23,7 +23,7 @@ export class TaskmgrAddComponent implements OnInit {
 
   
   ngOnInit() {
-  
+ 
     this.service.GetAllTasks().subscribe(
       p=>this.taskDetails=p.filter(res => !res.endTask));
     }
@@ -42,7 +42,13 @@ export class TaskmgrAddComponent implements OnInit {
         },
         error =>
         {
-          console.log("error " + error._body);
+          console.log(error.status);
+          console.log(error.statusText);
+          console.log(error._body);
+          console.log(JSON.parse(error._body));
+          if(error.status < 200 || error.status > 300)
+            this.results = JSON.parse(error._body);
+            this.openModal();
         }
       );
     }

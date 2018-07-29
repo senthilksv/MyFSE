@@ -31,10 +31,9 @@ constructor()
             if (priorityToSearch && item.priority > priorityToSearch)            
               return false;
             
-            if (startDateSearch )
+           if (startDateSearch )
             {
-             var startDateResult = this.datePipe.transform(item.startDate,'yyyy-MM-dd');
-             var startDateResult1 = this.datePipe.transform(item.startDate,'dd-MM-yyyy');
+             var startDateResult = this.datePipe.transform(item.startDate,'yyyy-MM-dd');            
              if(startDateResult != startDateSearch)            
               return false;            
             }
