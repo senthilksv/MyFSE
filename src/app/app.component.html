@@ -6,11 +6,13 @@
       <a class="navbar-brand" href="#">{{ title }}</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a  routerLinkActive="active" [routerLink]="'/add'">Add Task</a></li>
-        <li><a [routerLink]="'/view'">View Task</a></li>
+        <li><a class="active" style="cursor: pointer;"  (click) ="onNaviagteToAdd()">Add Task</a></li>
+        <li><a style="cursor: pointer;" (click) ="onNaviagteToView()">View Task</a></li>
     </ul>
   </div>
 </nav>
+
+
 
 <div class="container">
     

@@ -15,11 +15,6 @@ export class SharedService {
 
     }
 
-    GetParentList():Observable<TaskDetail[]>
-    {    
-       return this.http.get(this.baseUrl).map(this.extractResponse);
-    }
-
     GetAllTasks():Observable<TaskDetail[]>
     {   
         return this.http.get(this.baseUrl).map(this.extractResponse);      
