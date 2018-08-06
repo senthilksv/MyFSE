@@ -13,7 +13,7 @@ constructor()
   this.datePipe = new DatePipe('en-US');
 }
  
-  transform(items: TaskDetail[], nameSearch: string, parentTaskSearch: string, 
+  transform(items: TaskDetail[], nameSearch: any, parentTaskSearch: string, 
     priorityFromSearch: number, priorityToSearch: number,
     startDateSearch :string, endDateSearch:string){
     if (items && items.length){

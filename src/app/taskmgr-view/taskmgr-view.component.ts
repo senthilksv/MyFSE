@@ -15,14 +15,14 @@ export class TaskmgrViewComponent implements OnInit {
 
   @ViewChild('showmodalClick') showmodalClick:ElementRef;
    taskDetails:TaskDetail[] = [];
-   taskDetailsFiltered:TaskDetail[] = [];
+   public taskDetailsFiltered:TaskDetail[] = [];
    
-  task :string;
-  parentTask:string;
-  priorityFrom:number ;
-  priorityTo:number;
-  startDate:string;
-  endDate:string;
+   nameSearch :string;
+   parentTaskSearch:string;
+   priorityFromSearch:number ;
+   priorityToSearch:number;
+   startDateSearch:string;
+   endDateSearch:string;
   taskDetail:TaskDetail;
   results:string;
   showError:boolean;

@@ -31,6 +31,7 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [SharedService,TaskmgrSearchPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[TaskmgrSearchPipe]
 })
 export class AppModule { }
